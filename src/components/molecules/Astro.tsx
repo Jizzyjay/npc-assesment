@@ -13,6 +13,7 @@ interface AstroDataItem {
 const Astro = () => {
   const [astroData, setAstroData] = useState<AstroDataItem | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,8 +28,10 @@ const Astro = () => {
           }
         );
         setAstroData(response.data);
+        setError(null); // Reset error state if data is fetched successfully
       } catch (error) {
         console.error("Error fetching data:", error);
+        setError("Failed to fetch data. Please try again later."); // Set error message
       } finally {
         setLoading(false);
       }
@@ -45,6 +48,8 @@ const Astro = () => {
 
       {loading ? (
         <Spinner />
+      ) : error ? (
+        <div className="flex items-center justify-center text-red-600">{error}</div>
       ) : (
         <div className="flex flex-col">
           <div className="flex flex-row items-center justify-between mx-4 rounded-t-lg"></div>

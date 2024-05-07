@@ -11,7 +11,7 @@ const About = () => {
         <img
           src={apodImg}
           alt="APOD"
-          className="w-full rounded-lg"
+          className="w-full md:h-[350px] rounded-lg"
         />
         <div className="flex flex-col gap-4 py-4">
           <p className="text-[0.95rem] md:text-base text-gray-800 mt-4 md:mt-0">

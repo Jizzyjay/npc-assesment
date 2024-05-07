@@ -1,16 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import About from "./components/molecules/About";
-import Astro from "./components/molecules/Astro";
 import Navbar from "./components/molecules/Navbar";
+import Search from "./components/molecules/Search";
+import Home from "./components/page/Home";
 
 function App() {
-
   return (
-    <>
+    <Router>
       <Navbar />
-      <About />
-      <Astro />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
+    </Router>
   );
 }
 
