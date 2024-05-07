@@ -3,7 +3,7 @@ import axios from "axios";
 import AstroCard from "../atoms/AstroCard";
 import Spinner from "../atoms/Spinner";
 
-interface AstroDataItem {
+interface searchDataItem {
   url?: string;
   title?: string;
   explanation?: string;
@@ -12,7 +12,7 @@ interface AstroDataItem {
 
 const Search = () => {
   const [searchDate, setSearchDate] = useState("");
-  const [astroData, setAstroData] = useState<AstroDataItem | null>(null);
+  const [searchData, setSearchData] = useState<searchDataItem | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -25,7 +25,7 @@ const Search = () => {
           date: searchDate, // Add the search date to the API request params
         },
       });
-      setAstroData(response.data);
+      setSearchData(response.data);
       setError(null); // Reset error state if data is fetched successfully
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -64,12 +64,12 @@ const Search = () => {
         <Spinner />
       ) : error ? (
         <div className="text-red-600">{error}</div>
-      ) : astroData ? (
+      ) : searchData ? (
         <AstroCard
-          mediaUrl={astroData.url || ""}
-          title={astroData.title || ""}
-          explanation={astroData.explanation || ""}
-          date={astroData.date || ""}
+          mediaUrl={searchData.url || ""}
+          title={searchData.title || ""}
+          explanation={searchData.explanation || ""}
+          date={searchData.date || ""}
         />
       ) : null}
     </div>
