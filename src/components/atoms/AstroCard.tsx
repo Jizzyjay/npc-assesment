@@ -24,7 +24,7 @@ const AstroCard: React.FC<AstroCardProps> = ({
             <video
               src={mediaUrl}
               title="space-vid"
-              className="w-full h-full object-cover object-center rounded-md"
+              className="w-full h-full rounded-md"
               controls
             />
           </div>
@@ -33,7 +33,7 @@ const AstroCard: React.FC<AstroCardProps> = ({
           <img
             src={mediaUrl}
             alt={title}
-            className="w-full h-[450px] object-cover object-center rounded-md"
+            className="w-full h-[450px] rounded-md"
           />
         )}
         <div className="flex flex-col px-4 gap-6">

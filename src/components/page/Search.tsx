@@ -54,7 +54,8 @@ const Search = () => {
         />
         <button
           onClick={handleSearch}
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 rounded"
+          disabled={!searchDate}
+          className="bg-gray-800 hover:bg-blue-600 text-white font-bold py-1 px-4 cursor-pointer rounded"
         >
           Search
         </button>
