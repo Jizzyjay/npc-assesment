@@ -7,29 +7,36 @@ const Footer = () => {
     <footer className="bg-gray-800 py-4 px-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex flex-col gap-2">
-            <a href="/">
-              <img src={Logo} alt="Logo" className="w-16 h-16" />
-            </a>
-            <p className="text-sm text-gray-300 hover:text-white">Lagos Nigeria</p>
-            <p className="text-sm text-gray-300 hover:text-white">+2348141153727</p>
-          </div>
+          <a href="/" title="Home">
+            <img src={Logo} alt="Logo" className="w-16 h-16" />
+          </a>
           <div className="flex space-x-2">
-            <a href="/" className="text-gray-300 hover:text-white">
-              <IoMdMail />
-            </a>
-
             <a
-              href="https://github.com/Jizzyjay"
+              href="mailto:ekunolajohn@gmail.com"
+              title="Email"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-300 hover:text-white"
             >
-              <FaGithub />
+              <IoMdMail className="w-7 h-7" />
+            </a>
+            <a
+              href="https://github.com/Jizzyjay"
+              title="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white"
+            >
+              <FaGithub className="w-7 h-7" />
             </a>
             <a
               href="https://www.linkedin.com/in/ekunolajohn/"
+              title="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-300 hover:text-white"
             >
-              <FaLinkedin />
+              <FaLinkedin className="w-7 h-7" />
             </a>
           </div>
         </div>

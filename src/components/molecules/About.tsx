@@ -1,3 +1,5 @@
+import apodImg from '../../assets/apod.jpg'
+
 const About = () => {
   return (
     <div className="mx-4 md:mx-10 py-8">
@@ -7,7 +9,7 @@ const About = () => {
 
       <div className="flex flex-col items-center">
         <img
-          src="https://api.nasa.gov/assets/img/general/apod.jpg"
+          src={apodImg}
           alt="APOD"
           className="w-full rounded-lg"
         />
