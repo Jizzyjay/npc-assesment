@@ -41,7 +41,7 @@ const Astro = () => {
   }, []);
 
   return (
-    <div className="flex flex-col mx-4 md:mx-8 my-8">
+    <div className="flex flex-col mx-4 md:mx-8 mt-8 mb-[12rem] overflow-scroll">
       <div className="flex items-center justify-center pb-6">
         <p className="text-[1.1rem] md:text-2xl font-bold">The Astronomy Picture of Today</p>
       </div>

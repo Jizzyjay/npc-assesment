@@ -4,8 +4,8 @@ import Logo from "../../assets/nasa.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 py-4 px-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-800 py-4 px-4 md:px-8 fixed bottom-0 w-full">
+      <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
           <a href="/" title="Home">
             <img src={Logo} alt="Logo" className="w-16 h-16" />
@@ -18,7 +18,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white"
             >
-              <IoMdMail className="w-7 h-7" />
+              <IoMdMail className="w-6 h-6 md:w-7 md:h-7" />
             </a>
             <a
               href="https://github.com/Jizzyjay"
@@ -27,7 +27,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white"
             >
-              <FaGithub className="w-7 h-7" />
+              <FaGithub className="w-6 h-6 md:w-7 md:h-7" />
             </a>
             <a
               href="https://www.linkedin.com/in/ekunolajohn/"
@@ -36,7 +36,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white"
             >
-              <FaLinkedin className="w-7 h-7" />
+              <FaLinkedin className="w-6 h-6 md:w-7 md:h-7" />
             </a>
           </div>
         </div>

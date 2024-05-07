@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/molecules/Navbar";
-import Search from "./components/molecules/Search";
+import Search from "./components/page/Search";
 import Home from "./components/page/Home";
 
 function App() {
