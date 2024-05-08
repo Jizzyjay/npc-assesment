@@ -24,7 +24,7 @@ const Gallery = () => {
           {
             params: {
               api_key: import.meta.env.VITE_REACT_APP_NASA_API_KEY,
-              count: 16, // Fetch multiple items for the gallery
+              count: 18, // Fetch multiple items for the gallery
             },
           }
         );
@@ -56,7 +56,7 @@ const Gallery = () => {
           {error}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {galleryDataList.map((galleryData, index) => (
             <GalleryCard
               key={index}

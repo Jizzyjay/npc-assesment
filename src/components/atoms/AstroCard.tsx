@@ -36,12 +36,12 @@ const AstroCard: React.FC<AstroCardProps> = ({
           />
         )}
         <div className="flex flex-col gap-6">
-          <div>
+          <>
             <h2 className="text-[1.1rem] md:text-xl font-semibold text-gray-800">
               {title}
             </h2>
             <p className="text-sm font-medium mt-2">{date}</p>
-          </div>
+          </>
           <p className="text-gray-600 text-base mt-2 max-w-[1000px] md:max-h-80 overflow-scroll">
             {explanation}
           </p>
