@@ -24,6 +24,7 @@ const AstroCard: React.FC<AstroCardProps> = ({
               src={mediaUrl}
               title={title}
               className="w-full h-full rounded-md"
+              loading="lazy"
             />
           </div>
         ) : (

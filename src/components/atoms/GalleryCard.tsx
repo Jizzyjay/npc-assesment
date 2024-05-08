@@ -9,7 +9,7 @@ interface GalleryCardProps {
 const GalleryCard: React.FC<GalleryCardProps> = ({
   mediaUrl,
   title,
-  mediaType
+  mediaType,
 }) => {
   return (
     <div className=" max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
@@ -25,7 +25,12 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
           ></iframe>
         </div>
       ) : (
-        <img className="w-full h-64 object-cover" src={mediaUrl} alt={title} loading="lazy" />
+        <img
+          className="w-full h-64 object-cover"
+          src={mediaUrl}
+          alt={title}
+          loading="lazy"
+        />
       )}
       <div className="p-6">
         <h2 className="mb-3 text-xl font-bold text-gray-800 dark:text-white">
