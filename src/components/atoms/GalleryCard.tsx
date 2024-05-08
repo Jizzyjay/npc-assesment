@@ -12,7 +12,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
   mediaType,
 }) => {
   return (
-    <div className=" max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+    <div className="max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
       {mediaType === "video" ? (
         <div className="relative">
           <iframe
@@ -25,12 +25,14 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
           ></iframe>
         </div>
       ) : (
-        <img
-          className="w-full h-64 object-cover"
-          src={mediaUrl}
-          alt={title}
-          loading="lazy"
-        />
+        <div className="w-full h-64 overflow-hidden">
+          <img
+            className="w-full h-full object-cover"
+            src={mediaUrl}
+            alt={title}
+            loading="lazy"
+          />
+        </div>
       )}
       <div className="p-6">
         <h2 className="mb-3 text-xl font-bold text-gray-800 dark:text-white">
