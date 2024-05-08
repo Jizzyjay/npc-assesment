@@ -19,7 +19,7 @@ const AstroCard: React.FC<AstroCardProps> = ({
     <div className="overflow-hidden">
       <div className="flex flex-col md:flex-row gap-3">
         {mediaType === "video" ? (
-          <div className="w-full h-64">
+          <div className="w-full">
             <iframe
               src={mediaUrl}
               title={title}
@@ -41,7 +41,7 @@ const AstroCard: React.FC<AstroCardProps> = ({
             </h2>
             <p className="text-sm font-medium mt-2">{date}</p>
           </div>
-          <p className="text-gray-600 text-base mt-2 max-w-[900px] md:max-h-80 overflow-scroll">
+          <p className="text-gray-600 text-base mt-2 max-w-[1000px] md:max-h-80 overflow-scroll">
             {explanation}
           </p>
         </div>
