@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Spinner from "../atoms/Spinner";
-import GalleryCard from "../molecules/GalleryCard";
+import GalleryCard from "../atoms/GalleryCard";
 
 interface GalleryDataItem {
   url?: string;
@@ -62,7 +62,7 @@ const Gallery = () => {
               key={index}
               mediaUrl={galleryData.url || ""}
               title={galleryData.title || ""}
-              isVideo={galleryData.media_type === "video"} // Check if the media is a video
+              mediaType={galleryData.media_type || ""}// Check if the media is a video
             />
           ))}
         </div>

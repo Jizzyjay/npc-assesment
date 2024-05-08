@@ -8,6 +8,7 @@ interface AstroDataItem {
   title?: string;
   explanation?: string;
   date?: string;
+  media_type?: string;
 }
 
 const Astro = () => {
@@ -43,13 +44,17 @@ const Astro = () => {
   return (
     <div className="flex flex-col mx-4 md:mx-8 mt-8 mb-[2rem] overflow-scroll">
       <div className="flex items-center justify-center pb-6">
-        <p className="text-[1.1rem] md:text-2xl font-bold">The Astronomy Picture of Today</p>
+        <p className="text-[1.1rem] md:text-2xl font-bold">
+          The Astronomy Picture of Today
+        </p>
       </div>
 
       {loading ? (
         <Spinner />
       ) : error ? (
-        <div className="flex items-center justify-center text-red-600">{error}</div>
+        <div className="flex items-center justify-center text-red-600">
+          {error}
+        </div>
       ) : (
         <div className="flex flex-col">
           <div className="flex flex-row items-center justify-between mx-4 rounded-t-lg"></div>
@@ -60,6 +65,7 @@ const Astro = () => {
                 title={astroData.title || ""}
                 explanation={astroData.explanation || ""}
                 date={astroData.date || ""}
+                mediaType={astroData.media_type || ""}
               />
             )}
           </div>

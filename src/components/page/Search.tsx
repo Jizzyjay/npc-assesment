@@ -2,27 +2,31 @@ import { useState } from "react";
 import axios from "axios";
 import AstroCard from "../atoms/AstroCard";
 import Spinner from "../atoms/Spinner";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-interface searchDataItem {
+interface SearchDataItem {
   url?: string;
   title?: string;
   explanation?: string;
   date?: string;
+  media_type?: string;
 }
 
 const Search = () => {
-  const [searchDate, setSearchDate] = useState("");
-  const [searchData, setSearchData] = useState<searchDataItem | null>(null);
+  const [searchDate, setSearchDate] = useState(new Date());
+  const [searchData, setSearchData] = useState<SearchDataItem | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleSearch = async () => {
     try {
       setLoading(true);
+      const formattedDate = searchDate.toISOString().split("T")[0];
       const response = await axios.get("https://api.nasa.gov/planetary/apod", {
         params: {
           api_key: import.meta.env.VITE_REACT_APP_NASA_API_KEY,
-          date: searchDate, // Add the search date to the API request params
+          date: formattedDate, // Add the search date to the API request params
         },
       });
       setSearchData(response.data);
@@ -45,12 +49,12 @@ const Search = () => {
         date below
       </p>
       <div className="flex items-center justify-center">
-        <input
-          type="date"
-          value={searchDate}
-          placeholder="Search events by date"
-          onChange={(e) => setSearchDate(e.target.value)}
+        <DatePicker
+          selected={searchDate}
+          onChange={(date) => setSearchDate(date as Date)}
+          dateFormat="yyyy-MM-dd"
           className="border border-gray-300 rounded px-2 py-1 mr-2"
+          maxDate={new Date()} // Disable future dates
         />
         <button
           onClick={handleSearch}
@@ -70,6 +74,7 @@ const Search = () => {
           title={searchData.title || ""}
           explanation={searchData.explanation || ""}
           date={searchData.date || ""}
+          mediaType={searchData.media_type || ""}
         />
       ) : null}
     </div>

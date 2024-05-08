@@ -3,17 +3,17 @@ import React from "react";
 interface GalleryCardProps {
   mediaUrl?: string;
   title?: string;
-  isVideo?: boolean;
+  mediaType?: string;
 }
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
   mediaUrl,
   title,
-  isVideo = false,
+  mediaType
 }) => {
   return (
-    <div className="w-[300px] max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-      {isVideo ? (
+    <div className=" max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+      {mediaType === "video" ? (
         <div className="relative">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
@@ -21,10 +21,11 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
             title={title}
             frameBorder="0"
             allowFullScreen
+            loading="lazy"
           ></iframe>
         </div>
       ) : (
-        <img className="w-full h-64" src={mediaUrl} alt={title} />
+        <img className="w-full h-64 object-cover" src={mediaUrl} alt={title} loading="lazy" />
       )}
       <div className="p-6">
         <h2 className="mb-3 text-xl font-bold text-gray-800 dark:text-white">
